@@ -6,7 +6,7 @@ Simple memory game for use with pfio and the RaspberryPi interface (piface)
 Objective of the game: You must remember an ever increasing sequence of flashes and input them correctly*
 
 """
-
+from __future__ import print_function
 from time import sleep 		# for delays
 import random			# for random sequence generation
 import pifacedigitalio as pfio			# piface library
@@ -30,14 +30,14 @@ def signifyTurn(turn):
 
 	if screen_output:
 		if turn:
-			print "\nYour turn!"
+			print ("\nYour turn!")
 		else:
-			print "\nMy turn!"
+			print ("\nMy turn!")
 
 def screenOutput(i):
 	global colours
 	if screen_output:			# print the colour to the screen
-		print colours[i]
+		print (colours[i])
 
 def nextColour():
 	""" choses a random number between 0 and 3 to represent the coloured leds and their corresponding buttons"""
@@ -60,7 +60,7 @@ while game:						# while game in play
 	game_round = score+1				
 	
 	if screen_output:				# print the round number
-		print "\nRound %s!" %game_round
+		print ("\nRound {}!".format(game_round))
 		
 	for n in array:					# for each colour in current sequence (flash the sequence)
 
@@ -120,5 +120,5 @@ while game:						# while game in play
 
 pfd.output_port.value = 0			# if the game has been lost, set all the button leds off
 
-print "Your score was %s" %score 	# print the players score
+print ("Your score was {}".format(score)) 	# print the players score
 
