@@ -1,4 +1,4 @@
-simon
+pifaceMemoryGame
 =====
 
-Simon game for the PiFace and RaspberryPi
+Memory game for the PiFace Digital and RaspberryPi
